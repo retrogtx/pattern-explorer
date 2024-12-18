@@ -3,6 +3,7 @@
 import { useChat } from 'ai/react';
 import FileUpload from '@/components/FileUpload';
 import { Loader2, MessageSquareText } from 'lucide-react';
+import { ModeToggle } from '@/components/mode-toggle';
 
 export default function AnalysisPage() {
   const { messages, append, isLoading } = useChat();
@@ -22,9 +23,15 @@ export default function AnalysisPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-neutral-50 to-neutral-100 dark:from-neutral-950 dark:to-neutral-900">
       <div className="w-full max-w-[90rem] py-12 md:py-24 mx-auto px-4">
-        <div className="flex items-center justify-center gap-2 mb-8">
-          <MessageSquareText className="h-8 w-8 text-primary" />
-          <h1 className="text-3xl font-bold text-center tracking-tight">WhatsApp Pattern Explorer</h1>
+        <div className="relative flex items-center justify-center mb-8">
+          <div className="flex items-center gap-2">
+            <MessageSquareText className="h-8 w-8 text-primary" />
+            <h1 className="text-3xl font-bold tracking-tight">WhatsApp Pattern Explorer</h1>
+          </div>
+          
+          <div className="absolute right-0 top-0">
+            <ModeToggle />
+          </div>
         </div>
         
         {!isLoading && messages.length === 0 && (

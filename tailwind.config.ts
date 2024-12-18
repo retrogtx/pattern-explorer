@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import animate from "tailwindcss-animate";
 
 export default {
     darkMode: ["class"],
@@ -8,11 +9,11 @@ export default {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-  	extend: {
-  		fontFamily: {
-  			mono: ["var(--font-jetbrains)", "monospace"],
-  		},
-  		colors: {
+    extend: {
+      fontFamily: {
+        mono: ["var(--font-jetbrains)", "monospace"],
+      },
+      colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -61,5 +62,5 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animate],
 } satisfies Config;
